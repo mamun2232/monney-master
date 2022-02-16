@@ -5,15 +5,15 @@ document.getElementById('calculated-btn').addEventListener('click',function(){
 //          const tutalBalance = parseInt(userIncame) - tutalCost.innerText
 
 //          const tutal = document.getElementById('balance').innerText = tutalBalance
-          if(tutalCost.innerText < userIncame){
+          // if(tutalCost.innerText > userIncame){
                     const tutalBalance = parseInt(userIncame) - tutalCost.innerText
 
          const tutal = document.getElementById('balance').innerText = tutalBalance
 
-          }
-          else{
-                    console.log('sorry');
-          }
+          
+          // else{
+          //           console.log('sorry');
+          // }
 
 })
 
@@ -35,6 +35,13 @@ function calculate(){
 
 // tutal balance 
 document.getElementById('saving-btn').addEventListener('click',function(){
-          const savingFlied = document.
-          
+          const savingFlied = document.getElementById('saving-input');
+          const userSaveingAmount = savingFlied.value
+           
+          const tutalBalance = document.getElementById("balance").innerText
+           const savingAmount = tutalBalance * userSaveingAmount / 100
+
+           const save = document.getElementById('saveing-amount')
+           save.innerText = parseFloat(savingAmount);
+   
 })
