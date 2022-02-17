@@ -32,7 +32,7 @@ function TutalCalculate(){
 
                     }
                     else{
-                              alert('Sorry!! you can not expemses money more then your incame')
+                              alert('Sorry!! you can not expenses money more then your incame')
                     }
 
                     
