@@ -35,13 +35,29 @@ function calculate(){
 
 // tutal balance 
 document.getElementById('saving-btn').addEventListener('click',function(){
+        
           const savingFlied = document.getElementById('saving-input');
-          const userSaveingAmount = savingFlied.value
-           
-          const tutalBalance = document.getElementById("balance").innerText
-           const savingAmount = tutalBalance * userSaveingAmount / 100
+           const userSaveingAmount = savingFlied.value
 
+           const incamefled = document.getElementById('user-incame')
+           const userAmount = incamefled.value
+
+           const saveing = userAmount * userSaveingAmount / 100
            const save = document.getElementById('saveing-amount')
-           save.innerText = parseFloat(savingAmount);
+           save.innerText = saveing
+           remainingBalance()
+
+          
    
 })
+
+
+// remaining Balance ...........
+function remainingBalance(){
+         const balance = document.getElementById('balance').innerText
+         const saveingAmount = document.getElementById('saveing-amount').innerText
+         const tutal = balance - saveingAmount;
+
+         const remainingBalance = document.getElementById('remaining-balance')
+         remainingBalance.innerText = tutal
+}
