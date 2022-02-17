@@ -4,22 +4,17 @@ document.getElementById('calculated-btn').addEventListener('click',function(){
          let userIncame = userfield.value;
 
 //          candition ---------
-         if(userIncame > 0){
+//          if(userIncame > 0){
+
+          
           const tutalBalance = parseInt(userIncame) - tutalUserCost.innerText;
      
-          // const balance = document.getElementById('balance').innerText = tutalBalance;
-                    if(userIncame > tutalUserCost){
-                              balance = document.getElementById('balance').innerText = tutalBalance
-
-                    }
-                    else{
-                              alert('user amount smoall')
-                    }
-
-         }
-         else{
-                   alert('plase')
-         }
+          const balance = document.getElementById('balance').innerText = tutalBalance;
+                    
+//          }
+//          else{
+//                    alert('tupe a possitive number')
+//          }
 
     
 
@@ -27,11 +22,13 @@ document.getElementById('calculated-btn').addEventListener('click',function(){
 
 // function use for tutalExpenses ----------------
 function TutalCalculate(){
+          const userfield = document.getElementById('user-incame');
           const UserFoodAmount = document.getElementById('food-cost');
           const UserRentAmount = document.getElementById('rent-cost');
           const UserClothesAmount = document.getElementById('clothes-cost');
           //  candition ...........
-          if(UserFoodAmount.value > 0 && UserRentAmount.value > 0 && UserClothesAmount.value > 0){
+          if(UserFoodAmount.value > 0 && UserRentAmount.value > 0 && UserClothesAmount.value > 0 && userfield.value > 0){
+                    
                     const tutal = parseInt(UserFoodAmount.value) + parseInt(UserRentAmount.value) + parseInt(UserClothesAmount.value);
 
                     const tutalExpenses = document.getElementById('user-Expenses');
@@ -68,7 +65,7 @@ document.getElementById('saving-btn').addEventListener('click',function(){
          
                     }
                     else{
-                              alert('you have no Enaf marny')
+                              alert('sorry you have no enaf marny')
                     }
           
 
@@ -78,11 +75,7 @@ document.getElementById('saving-btn').addEventListener('click',function(){
                      alert('please enter a possitive value')
            }
            
-           
-           
-
-           
-          
+              
 
 })
 

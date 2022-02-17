@@ -4,12 +4,14 @@ body{
           padding: 0;
           box-sizing: border-box;
 
-}
+} 
+
 .input{
           width: 230px;
-          margin: 20px 0px;
+          margin: 18px 0px;
+          border: 1px solid gray;
+          border-radius: 5px;
+          box-shadow: 1px solid black;
           
 }
-.heading{
-         padding-right: 0px;
-}
+
