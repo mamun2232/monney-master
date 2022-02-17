@@ -1,63 +1,61 @@
 document.getElementById('calculated-btn').addEventListener('click',function(){
-         let tutalCost = calculate()
-         const userfled = document.getElementById('user-incame')
-         let userIncame = userfled.value
-//          const tutalBalance = parseInt(userIncame) - tutalCost.innerText
+         let tutalUserCost = TutalCalculate();
+         const userfield = document.getElementById('user-incame');
+         let userIncame = userfield.value;
 
-//          const tutal = document.getElementById('balance').innerText = tutalBalance
-          // if(tutalCost.innerText > userIncame){
-                    const tutalBalance = parseInt(userIncame) - tutalCost.innerText
+                    const tutalBalance = parseInt(userIncame) - tutalUserCost.innerText;
 
-         const tutal = document.getElementById('balance').innerText = tutalBalance
+                    const balance = document.getElementById('balance').innerText = tutalBalance;
 
-          
-          // else{
-          //           console.log('sorry');
-          // }
 
 })
 
-// function use for tutalExpenses 
-function calculate(){
-          const UserFood = document.getElementById('user-food')
-          const UserRent = document.getElementById('user-rent')
-          const UserClothes = document.getElementById('user-clothes')
+// function use for tutalExpenses ----------------
+function TutalCalculate(){
+          const UserFoodAmount = document.getElementById('food-cost');
+          const UserRentAmount = document.getElementById('rent-cost');
+          const UserClothesAmount = document.getElementById('clothes-cost');
 
-          const tutal = parseInt(UserFood.value) + parseInt(UserRent.value) + parseInt(UserClothes.value) 
+          if(UserFoodAmount.value > 0 && UserRentAmount.value > 0 && UserClothesAmount.value > 0){
+                    const tutal = parseInt(UserFoodAmount.value) + parseInt(UserRentAmount.value) + parseInt(UserClothesAmount.value);
 
-          const tutalExpenses = document.getElementById('user-Expenses')
-          tutalExpenses.innerText = tutal
-
+                    const tutalExpenses = document.getElementById('user-Expenses');
+                    tutalExpenses.innerText = tutal;
+                    return tutalExpenses;
           
+                    
 
-          return tutalExpenses
+          }
+          else{
+                    alert('Please Enter a possiitve number')
+          }
+         
+         
 }
 
-// tutal balance 
+// saving balance calculated .....................
 document.getElementById('saving-btn').addEventListener('click',function(){
         
-          const savingFlied = document.getElementById('saving-input');
-           const userSaveingAmount = savingFlied.value
+          const savingField = document.getElementById('saving-input');
+           const userSaveingAmount = savingField.value
 
-           const incamefled = document.getElementById('user-incame')
-           const userAmount = incamefled.value
+           const userIncameField = document.getElementById('user-incame');
+           const userAmount = userIncameField.value;
 
-           const saveing = userAmount * userSaveingAmount / 100
-           const save = document.getElementById('saveing-amount')
-           save.innerText = saveing
-           remainingBalance()
+           const tutalSave = userAmount * userSaveingAmount / 100;
+           const savingAmount = document.getElementById('saveing-amount');
+           savingAmount.innerText = tutalSave;
+           remainingBalance();
 
-          
-   
 })
 
 
-// remaining Balance ...........
+// funcation use for remaining Balance ...........
 function remainingBalance(){
-         const balance = document.getElementById('balance').innerText
-         const saveingAmount = document.getElementById('saveing-amount').innerText
-         const tutal = balance - saveingAmount;
+         const balance = document.getElementById('balance').innerText;
+         const savingAmount = document.getElementById('saveing-amount').innerText;
+         const tutalBalance = balance - savingAmount;
 
-         const remainingBalance = document.getElementById('remaining-balance')
-         remainingBalance.innerText = tutal
+         const remainingBalance = document.getElementById('remaining-balance');
+         remainingBalance.innerText = tutalBalance;
 }
