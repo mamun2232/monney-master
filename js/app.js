@@ -1,50 +1,51 @@
 document.getElementById('calculated-btn').addEventListener('click',function(){
-         let tutalUserCost = TutalCalculate();
-         const userfield = document.getElementById('user-incame');
-         let userIncame = userfield.value;
-
-//          candition ---------
-//          if(userIncame > 0){
-
-          
-          const tutalBalance = parseInt(userIncame) - tutalUserCost.innerText;
-     
-          const balance = document.getElementById('balance').innerText = tutalBalance;
-                    
-//          }
-//          else{
-//                    alert('tupe a possitive number')
-//          }
-
-    
+          TutalCalculate();
 
 })
 
-// function use for tutalExpenses ----------------
+// function use for tutalExpenses ----------------------
 function TutalCalculate(){
           const userfield = document.getElementById('user-incame');
-          const UserFoodAmount = document.getElementById('food-cost');
-          const UserRentAmount = document.getElementById('rent-cost');
-          const UserClothesAmount = document.getElementById('clothes-cost');
-          //  candition ...........
-          if(UserFoodAmount.value > 0 && UserRentAmount.value > 0 && UserClothesAmount.value > 0 && userfield.value > 0){
-                    
-                    const tutal = parseInt(UserFoodAmount.value) + parseInt(UserRentAmount.value) + parseInt(UserClothesAmount.value);
+          const userIname = userfield.value
+          const userFood = document.getElementById('food-cost');
+          const userFoodAmount = userFood.value
 
-                    const tutalExpenses = document.getElementById('user-Expenses');
-                    tutalExpenses.innerText = tutal;
-                    return tutalExpenses;
-            
+          const userRent = document.getElementById('rent-cost');
+          const userRentAmount = userRent.value
+          const userClothes = document.getElementById('clothes-cost');
+          const userClothesAmount = userClothes.value
+          //  candition ...........
+    
+          if(userFoodAmount > 0 && userRentAmount > 0 && userClothesAmount > 0 && userIname > 0){
+                    const tutalCost = parseInt(userFoodAmount) + parseInt(userRentAmount) + parseInt(userClothesAmount)
+                    // another candition ...........
+                    if(userIname > tutalCost){
+                    const tutalExpenses = document.getElementById('user-Expenses')
+                    const tutalExpensesText = tutalExpenses.innerText;
+                    const tutalExpensesAmount = parseInt(tutalExpensesText)
+                    tutalExpenses.innerText = tutalCost
+
+                    const updateBalance = document.getElementById('balance')
+                    const newBalance = userIname - tutalExpenses.innerText
+                    updateBalance.innerText = newBalance
+
+
+                    }
+                    else{
+                              alert('Sorry!! you can not expemses money more then your incame')
+                    }
+
+                    
 
           }
           else{
-                    alert('Please Enter a possiitve number')
+                    alert('Please input a valid number.')
+
           }
-         
-         
+           
 }
 
-// saving balance calculated .....................
+// saving balance calculated ..........................
 document.getElementById('saving-btn').addEventListener('click',function(){
         
           const savingField = document.getElementById('saving-input');
@@ -65,14 +66,14 @@ document.getElementById('saving-btn').addEventListener('click',function(){
          
                     }
                     else{
-                              alert('sorry you have no enaf marny')
+                              alert('Sorry!! you dont have enough money.')
                     }
           
 
            }
 
            else{
-                     alert('please enter a possitive value')
+                     alert('Please input a valid number')
            }
            
               
@@ -80,7 +81,7 @@ document.getElementById('saving-btn').addEventListener('click',function(){
 })
 
 
-// funcation use for remaining Balance ...........
+// funcation use for remaining Balance ....................
 function remainingBalance(){
          const balance = document.getElementById('balance').innerText;
          const savingAmount = document.getElementById('saveing-amount').innerText;

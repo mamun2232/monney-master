@@ -6,12 +6,13 @@ body{
 
 } 
 
+
 .input{
           width: 230px;
           margin: 18px 0px;
           border: 1px solid gray;
           border-radius: 5px;
           box-shadow: 1px solid black;
-          
+        
 }
 
